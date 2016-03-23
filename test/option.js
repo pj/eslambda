@@ -3,8 +3,8 @@ import {None, Some} from '../src/option';
 
 chai.should();
 
-describe('blah', function() {
-    it('blah', function() {
+describe('Option', function() {
+    it('foo', function() {
         let x = for {
             a <= new Some(1);
         }
