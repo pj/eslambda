@@ -43,7 +43,7 @@ describe('State', function() {
         }
 
         let result = x.run([1, 2, 3]);
-        result[0].should.be.equal([1, 3, 2]);
-        result[1].should.be.null();
+        result[0].should.be.deep.equal([1, 3, 2]);
+        expect(result[1]).to.be.null;
     });
 });

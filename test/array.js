@@ -9,6 +9,6 @@ describe('Array', function() {
             a <= [1,2,3];
             [a, a, a];
         }
-        result.should.equal([1, 1, 1, 2, 2, 2, 3, 3, 3]);
+        result.should.be.deep.equal([1, 1, 1, 2, 2, 2, 3, 3, 3]);
     });
 });
