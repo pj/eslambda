@@ -1,27 +1,29 @@
-class Option {
+// @flow
+class Option<T> {
 }
 
-export class Some extends Option {
-    constructor(value) {
+export class Some<T> extends Option<T> {
+    value: T;
+    constructor(value: T) {
         super();
         this.value = value;
     }
 
-    then(func) {
+    then<X>(func: (x: T) => Option<X>): Option<X> {
         return func(this.value);
     }
 
-    getOrElse(value) {
-        return this.value;
+    getOrElse<X>(value: X): Option<T> {
+        return this;
     }
 }
 
-export const None = new class None extends Option {
-    then(func) {
+export const None = new class None extends Option<null> {
+    then(func: (x: any) => Option<any>): Option<null> {
         return this;
     }
 
-    getOrElse(value) {
-        return value;
+    getOrElse<X>(value: X): Option<X> {
+        return new Option(value);
     }
 }

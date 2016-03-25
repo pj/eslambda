@@ -1,4 +1,9 @@
 {
   "presets": ["es2015"],
-  "plugins": ["transform-monad-notation"]
+  "plugins": [
+    "syntax-class-properties",
+    "transform-class-properties",
+    "syntax-flow",
+    "transform-monad-notation",
+    "transform-flow-strip-types"]
 }

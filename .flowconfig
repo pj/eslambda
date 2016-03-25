@@ -1,0 +1,6 @@
+[ignore]
+.*/esλ/src/.*
+.*/esλ/test/.*
+
+[libs]
+interfaces/
