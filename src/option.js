@@ -18,6 +18,7 @@ export class Some<T> extends Option<T> {
     }
 }
 
+// FIXME: Fix types up?
 export const None = new class None extends Option<null> {
     then(func: (x: any) => Option<any>): Option<null> {
         return this;

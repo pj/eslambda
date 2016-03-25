@@ -1,17 +1,18 @@
+// @flow
 import chai, {expect} from 'chai';
-import State from '../src/state';
+import State, {get, put, value} from '../src/state';
 
 chai.should();
 
 describe('State', function() {
     it('get / put', function() {
         let x = for {
-            _ <= State.put(state => {
+            _ <= put(state => {
                 state["foo"] = "bar";
                 return state;
             });
-            state <= State.get();
-            State.value(() => state["foo"]);
+            state <= get();
+            value(() => state["foo"]);
         }
 
         let result = x.run({});
@@ -43,7 +44,7 @@ describe('State', function() {
         }
 
         let result = x.run([1, 2, 3]);
-        result[0].should.be.deep.equal([1, 3, 2]);
+        expect(result[0]).to.be.deep.equal([1, 3, 2]);
         expect(result[1]).to.be.null;
     });
 });
